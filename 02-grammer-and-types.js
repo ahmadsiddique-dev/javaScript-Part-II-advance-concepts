@@ -22,6 +22,17 @@ const char = 'c'
 
 // Only converts into sting when there is + operator between values ok other wise treats as numerical values.
 
-console.log(typeof char);
+// console.log(typeof char);
 
-console.log("1" - "1");
+console.log(+"1" + +"1"); // This is mad
+
+
+let num = 10010;
+
+// console.log(parseInt(num, 2));
+
+
+
+
+
+
