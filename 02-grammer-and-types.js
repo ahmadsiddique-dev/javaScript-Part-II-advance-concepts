@@ -27,7 +27,7 @@ const char = 'c'
 console.log(+"1" + +"1"); // This is mad
 
 
-let num = 10010;
+// let num = 10010;
 
 // console.log(parseInt(num, 2));
 
@@ -35,4 +35,27 @@ let num = 10010;
 
 
 
+
+const str =
+  "This string \
+is broken \
+across multiple \
+lines.";
+
+// console.log(str); 
+
+// console.log(typeof null); // type of null will be object KEEP IN MIND
+
+
+function givesNum () {
+  var num = 34
+}
+
+// console.log(num); // cannot get because var is a function scoped.
+
+// if (typeof null === typeof ({ name : "ahmad"})){
+// console.log("not ok");
+// }else {
+//   console.log("ok");
+// }
 
