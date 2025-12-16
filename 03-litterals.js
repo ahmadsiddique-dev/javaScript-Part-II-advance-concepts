@@ -119,7 +119,7 @@ const months = [
 
 
 
-// function gradeStudent (name, marks, extraCredit = 0) {try {if (typeof name !== "string" || name.trim() === "") throw new Error("Name is invalid");if(typeof marks !== "number" || marks < 0 || marks > 100) throw new Error("Invalid marks input");if (typeof extraCredit !== "number" || extraCredit < 0 || extraCredit > 10 /* only 10 extra can be given */) throw new Error("Invalid extra credits");let total = marks + extraCredit;if (total >= 100) throw new Error("Total marks cannot be greater than 100");if (total >= 90) {return "A+";}else if (total >= 80) {return "A";}else if (total >= 70) {return "B";}else if (total >= 60) {return "C";}else if (total >= 50) {return "D";}else {return "F";}} catch(error) {return "Error: " + error;}};console.log(gradeStudent("Sara", 80, 5));
+// 
 
 // console.log(typeof undefined , typeof null);
 
@@ -190,6 +190,31 @@ const detail = {
   price: 1500000
 }
 
-console.log(detail);
-console.log(MyCar(detail))
-console.log(detail);
+
+
+
+function fact(n) {
+  return n < 2 ? 1 : n * fact(n-1); // Finding factorial
+}
+
+// console.log(fact(4));
+// console.log(fact(5));
+
+function parent() {
+  let x = 10;
+
+  return function child() {
+    return x;
+  };
+}
+
+
+function outside() {
+  const x = 5;
+  function inside(x) {
+    return x * 2;
+  }
+  return inside;
+}
+
+console.log(outside()(10)); // 20 (instead of 10)

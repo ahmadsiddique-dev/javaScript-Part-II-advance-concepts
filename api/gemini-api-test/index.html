@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Test</title>
+</head>
+<body>
+
+  <div>
+    <input class="input" type="text" placeholder="Ask something..." />
+    <button class="submit">Submit</button>
+  </div>
+
+  <div>
+    <p class="output"></p>
+  </div>
+
+  <script>
+    async function getData(prompt) {
+      const response = await fetch("http://localhost:3000", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ prompt }),
+      });
+
+      return response.json(); // ✅ IMPORTANT
+    }
+
+    document.querySelector(".submit").addEventListener("click", async () => {
+      const input = document.querySelector(".input");
+      const output = document.querySelector(".output");
+      const prompt = input.value.trim();
+
+      if (!prompt) {
+        alert("There should be a valid message");
+        return;
+      }
+
+      output.innerText = "Thinking... 🤖";
+
+      try {
+        const data = await getData(prompt);
+
+        if (!data.success) {
+          output.innerText = "Error: " + data.message;
+          return;
+        }
+
+        output.innerText = data.reply;
+
+      } catch (err) {
+        console.error(err);
+        output.innerText = "Something went wrong ❌";
+      }
+    });
+  </script>
+
+</body>
+</html>
