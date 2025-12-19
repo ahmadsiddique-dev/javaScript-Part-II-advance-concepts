@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html style="background-color: #dc2626;" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        @media print {
+  body {
+    -webkit-print-color-adjust: exact; /* for Chrome/Safari */
+    print-color-adjust: exact;         /* standard */
+    background-color: #dc2626 !important;  /* force background */
+    color: white;                       /* if needed for text */
+  }
+}
+      .neon-text {
+        color: #fff;
+        /* font-family: monospace !important;  */
+        font-weight: bold;
+        font-size: 40px; /* Adjust size as needed */
+        text-shadow: 0 0 3px #fff, 0 0 5px #fff, 0 0 8px #00ff33,
+          /* Base green glow */ 0 0 10px #00ff33;
+        transition: all 0.5s ease-in-out; /* Smooth transition for hover effect */
+        cursor: default;
+      }
+
+      .neon-text:hover {
+        text-shadow: 0 0 3px #fff, 0 0 5px #fff, 0 0 8px #00ff33,
+          0 0 10px #00ff33, 0 0 15px #00ff33, 0 0 20px #00ff33, 0 0 25px #00ff33,
+          0 0 30px #00ff33; /* Increased glow on hover */
+      }
+      .myButton {
+        background-color: #04aa6d; /* Green background */
+        border: none; /* Remove default border */
+        color: white; /* White text */
+        padding: 11px 20px; /* Space between text and border */
+        text-align: center; /* Center the text */
+        text-decoration: none; /* Remove underline for <a> tags */
+        display: inline-block; /* Allows setting padding and margins */
+        font-size: 16px; /* Increase font size */
+        cursor: pointer; /* Change mouse cursor to a hand */
+        border-radius: 8px; /* Rounded corners */
+        transition-duration: 0.4s;
+        position: absolute;
+        right: 0;
+      }
+      .myButton:active {
+        background-color: #45a049; /* Darker green when pressed */
+        transform: translateY(2px); /* Moves button down 2px */
+        box-shadow: 0 1px 0 #ccc; /* Flattens the shadow */
+      }
+    </style>
+  </head>
+  <body
+    class="neon-text"
+    style="
+      background-color: #dc2626;
+      color: black;
+      margin-top: 4rem;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      gap: 34;
+    "
+  >
+    <center>My Life Happy Momments.</center>
+    <center>
+      <div style="margin-top: 34px; position: relative">
+        <button onclick="handleClick()" class="myButton" >Snap!</button>
+        <img
+          style="border-radius: 20px"
+          height="500"
+          src="/me-with-ballish.jpg"
+          alt="my-picture-with-ballish-bhai"
+        />
+      </div>
+    </center>
+
+    <script>
+        function handleClick() {
+            window.print()
+        }
+    </script>
+  </body>
+</html>
