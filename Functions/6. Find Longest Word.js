@@ -4,15 +4,18 @@
 
 // Expected Output : 'Development'
 
-let str = 'Web Development Tutorial';
+function findBig(str) {
+  let rslt = str.split(" ");
 
-let rslt = str.split(" ");
-
-let res = "";
-rslt.map((e) => {
+  let res = "";
+  rslt.map((e) => {
     if (e.length > res.length) {
-        res = e
+      res = e;
     }
-});
+  });
 
-console.log(res);
+  return res;
+}
+
+let str = "Web Development Tutorial";
+console.log(findBig(str));
