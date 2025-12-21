@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promises</title>
+  </head>
+  <body style="background-color: #0f172a; height: screen; width: screen">
+    <center>
+      <h1 style="color: white; font-family: monospace; font-size: 4rem">
+        Ahmad Siddique
+      </h1>
+    </center>
+    <script>
+      window.addEventListener("unhandledrejection", (e) => {
+        console.log("Unhandled:", e.reason);
+      });
+
+      window.addEventListener("rejectionhandled", (e) => {
+        console.log("Handled later");
+      });
+
+      window.onunhandledrejection = ((e) => {
+        console.log("Am I printed : ", e.reason);
+      })
+
+      const p = Promise.reject("Failed");
+
+      setTimeout(() => {
+        p.catch(() => {});
+      }, 4000);
+    </script>
+  </body>
+</html>
