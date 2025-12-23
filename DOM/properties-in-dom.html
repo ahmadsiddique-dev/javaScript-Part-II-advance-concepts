@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Properties of DOM</title>
+</head>
+<body bgcolor="#0f170a" >
+    <main>
+        <div>
+            <h1 onclick=hello()>ahamd</h1>
+        </div>
+    </main>
+    <script>
+        let pNode = document.querySelector("h1").parentNode; // Get element
+        console.log("Father : ", pNode); // consoling
+        console.log(pNode.childNodes); // get Chilenode
+        console.log(pNode.getRootNode()); // Root node
+        console.log(pNode.contains("H1"));
+
+        function hello(){
+            alert("Hello, all of you!")
+        }
+    </script>
+</body>
+</html>

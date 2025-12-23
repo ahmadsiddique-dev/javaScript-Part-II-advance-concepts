@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table with JS</title>
+  </head>
+  <body>
+    <button>Generate!</button>
+    <main border="5px"></main>
+    <script>
+
+    function select(arg) {
+        return document.querySelector(`${arg}`);
+    }
+
+    function create(ele) {
+        return document.createElement(`${ele}`);
+    }
+
+
+    function createTable() {
+
+        let table = create("table");
+        let tbody = create("tbody");
+
+        for (let i = 1; i < 3; i++) {
+
+            let tRow = create("tr");
+
+            for (let j = 1; j < 4; j++) {
+
+                let td = create("td");
+                let content = document.createTextNode(`Row ${i}, Column ${j}`);
+
+                td.appendChild(content);
+                tRow.appendChild(td);
+            }
+
+            tbody.appendChild(tRow);
+        }
+
+        table.appendChild(tbody);
+
+        select("main")
+        .appendChild(table);
+
+        table.setAttribute("border", "2px");
+
+        table.style.margin = "20px"
+    }
+
+    select("button").addEventListener("click", () => {
+        createTable();
+    })
+    </script>
+  </body>
+</html>

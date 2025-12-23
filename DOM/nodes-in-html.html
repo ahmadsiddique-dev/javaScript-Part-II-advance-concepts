@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nodes in HTML</title>
+</head>
+<body bgcolor="#0f172a">
+    <div class="divh">
+        <p class="ph">
+            I am a paragraph;
+        </p>
+        <p dir="rtl">
+            I am another one but at Your Right side
+        </p>
+        <!-- I am a comment -->
+    </div>
+    <script>
+        let nodes = document.querySelector(".divh").childElementCount;
+        console.log(nodes);
+        document.querySelector("ph").textContent = "broom"
+    </script>
+</body>
+</html>
