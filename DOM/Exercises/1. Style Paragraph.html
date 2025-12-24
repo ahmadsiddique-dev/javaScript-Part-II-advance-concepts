@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>JS DOM paragraph style</title>
+  </head>
+
+  <style>
+    /* body {
+        font-family: cursive;
+    } */
+  </style>
+  <body>
+    <p id="text">JavaScript Exercises - w3resource</p>
+    <div>
+      <button id="jsstyle" onclick="js_style()">Style</button>
+    </div>
+    <script>
+        function select(ref) {
+            return document.querySelector(`${ref}`)
+        }
+        function js_style() {
+            let pRef = select("#text");
+            pRef.style.color = "green";
+            pRef.style.fontFamily = "cursive";
+            pRef.style.fontSize = "4rem"
+        }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Image generator</title>
+  </head>
+  <body>
+    <center style="margin-bottom: 34px">
+      <div>
+        <img src="" alt="" />
+      </div>
+      <button>Generate!</button>
+    </center>
+    <script>
+        var theImages = [{
+        src: "http://farm4.staticflickr.com/3691/11268502654_f28f05966c_m.jpg",
+        width: "240",
+        height: "160"
+    }, {
+        src: "http://farm1.staticflickr.com/33/45336904_1aef569b30_n.jpg",
+        width: "320",
+        height: "195"
+    }, {
+        src: "http://farm6.staticflickr.com/5211/5384592886_80a512e2c9.jpg",
+        width: "500",
+        height: "343"
+    }];
+
+    function captureRandomImg() {
+        let random = Math.random() * 10;
+
+        if (random < 3) {
+            return theImages[0]
+        }
+        else if (random < 6) {
+            return theImages[1]
+        }
+        else {
+            return theImages[2]
+        }
+    }
+
+    function select(ref) {
+        return document.querySelector(`${ref}`)
+    }
+
+    select("button").addEventListener("click", () => {
+        select("img").setAttribute("height", captureRandomImg().height);
+        select("img").setAttribute("width", captureRandomImg().width);
+        select("img").setAttribute("src", captureRandomImg().src)
+    })
+
+
+    </script>
+  </body>
+</html>

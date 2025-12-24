@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - HTML</title>
+</head>
+<style>
+    a {
+        color: green;
+        text-decoration: dotted;
+    }
+    a:visited { 
+        color: plum;
+    }
+</style>
+<body>
+    <header>
+        <ul style="display: flex; justify-content: space-around; align-items: center; list-style: none;">
+            <li><a href="https://google.com">google</a></li>
+            <li><a href="https://facebook.com">facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Linkedin</a></li>
+            <li><a href="#">Snapchat</a></li>
+        </ul>
+    </header>
+    <main>
+        <h1>
+            Hey Everyone! How are you all.
+        </h1>
+        <p>Today we geather here so that we can collaborate and build something by ourselves It would be a great opportunity to see the future together and prove to the world that we are not less than anyone.</p>
+    </main>
+    <script>
+        
+        const event = new Event("broom");
+
+        document.querySelector("p").addEventListener("broom", () => {
+            
+        })
+    </script>
+</body>
+</html>
