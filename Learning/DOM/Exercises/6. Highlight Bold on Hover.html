@@ -1,0 +1,69 @@
+<!-- This exercise seem a little tough so what we have to do is that we have to make a programm that bolds a specific character bold when we hover on it -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elements Bolder</title>
+</head>
+<style>
+    * {
+        color: azure;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+        background-color: #0f172a;
+    }   
+    
+    p {
+        background-color: #020617;
+        margin: 30px;
+        padding: 20px;
+        border-radius: 10px;
+        font-size: 2rem;
+    }
+
+    main {
+        max-width: 60vw;
+        margin: auto;
+    }
+    
+</style>
+<body>
+    <main>
+        <center>
+            <h1>This shows Bold text on Hover.</h1>
+            <p></p>
+        </center>
+    </main>
+
+    <script>
+        const text = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam non dolores voluptas! Necessitatibus officiis dolor minus tenetur praesentium eos, quam quisquam odio aperiam earum iste maxime! Officiis illo voluptatibus sunt ad officia nulla maiores eligendi ipsam nostrum voluptate voluptatem repudiandae quo laboriosam cum eveniet assumenda consequatur alias, quibusdam laborum eos. Magni eligendi blanditiis accusantium beatae? Velit."
+
+        let splited = text.split("");
+        let p = document.querySelector("p");
+
+        splited.forEach((e) => {
+            let span = document.createElement("span")
+            span.innerText = e;
+
+            p.appendChild(span);
+        });
+
+        const spans = document.querySelectorAll("span");
+
+spans.forEach(span => {
+    span.addEventListener("mouseenter", function() {
+        this.style.fontWeight = 900;
+        this.style.color = "green"
+    });
+    span.addEventListener("mouseleave", function() {
+        this.style.fontWeight = 400; // revert back when not hovered
+        this.style.color =  "azure";
+    });
+});
+
+    </script>
+</body>
+</html>
