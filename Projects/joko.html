@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Joko</title>
+    <style>
+      * {
+        font-family: cursive;
+      }
+      .cool {
+        min-height: 100vh;
+        background-image: linear-gradient(
+            to right,
+            rgba(229, 231, 235, 0.8) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            to bottom,
+            rgba(229, 231, 235, 0.8) 1px,
+            transparent 1px
+          ),
+          radial-gradient(
+            circle 500px at 0% 20%,
+            rgba(139, 92, 246, 0.3),
+            transparent
+          ),
+          radial-gradient(
+            circle 500px at 100% 0%,
+            rgba(59, 130, 246, 0.3),
+            transparent
+          );
+        background-size: 48px 48px, 48px 48px, 100% 100%, 100% 100%;
+      }
+    </style>
+  </head>
+  <body class="m-0 p-0">
+    <div class="cool flex justify-center gap-4 flex-col items-center">
+      <div
+        class="card flex justify-center flex-col items-start h-64 w-128 bg-rose-300 rounded-lg p-6"
+      >
+      <p><b>First : </b></p><p class="first">What did the fish say when it swam into the wall?</p>
+      <p><b>Second : </b></p><p class="second">Dam.</p>
+    </div>
+      <button
+        class="bg-rose-500 px-5 py-2 rounded-lg cursor-pointer active:translate-y-1"
+        onclick=generateJoke()
+      >
+        Generate!
+      </button>
+    </div>
+    <script>
+
+      async function generateJoke() {
+
+        const res = await fetch("https://v2.jokeapi.dev/joke/Any");
+        const data = await res.json();
+        
+        setTimeout(() => {
+          document.querySelector(".first").textContent = data.setup;
+        document.querySelector(".second").textContent = data.delivery;
+        }, 1000);
+
+        
+      }
+
+    </script>
+  </body>
+</html>
